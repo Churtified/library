@@ -1,14 +1,6 @@
 const libraryContainer = document.querySelector('.libraryContainer');
 
-let myLibrary = ["new book 1", "new book 2"];
-
-for (let i = 0; i < myLibrary.length; i++) {
-    let displayLibrary = document.createElement('p');
-    displayLibrary.classList.add('displayLibrary');
-    displayLibrary.textContent = myLibrary[i];
-
-    libraryContainer.appendChild(displayLibrary);
-}
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title,
@@ -27,24 +19,34 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayNewBook(latestBook) {
+    let bookContainer = document.createElement('div');
+    bookContainer.classList.add('bookContainer');
+
+    libraryContainer.appendChild(bookContainer);
+
     let showTitle = document.createElement('p');
     showTitle.classList.add('showTitle');
-    showTitle.textContent = latestBook.title;
+    showTitle.textContent = `Title: ${latestBook.title}`;
 
     let showAuthor = document.createElement('p');
     showAuthor.classList.add('showAuthor');
-    showAuthor.textContent = latestBook.author;
+    showAuthor.textContent = `Author: ${latestBook.author}`;
 
     let showPages = document.createElement('p');
     showPages.classList.add('showPages');
-    showPages.textContent = latestBook.pages;
+    showPages.textContent = `Pages: ${latestBook.pages}`;
     
     let showRead = document.createElement('p');
     showTitle.classList.add('showRead');
-    showRead.textContent = latestBook.read;
+    showRead.textContent = `Read Status: ${latestBook.read}`;
 
-    libraryContainer.appendChild(showTitle);
-    libraryContainer.appendChild(showAuthor);
-    libraryContainer.appendChild(showPages);
-    libraryContainer.appendChild(showRead);
+    bookContainer.appendChild(showTitle);
+    bookContainer.appendChild(showAuthor);
+    bookContainer.appendChild(showPages);
+    bookContainer.appendChild(showRead);
+
+    // libraryContainer.appendChild(showTitle);
+    // libraryContainer.appendChild(showAuthor);
+    // libraryContainer.appendChild(showPages);
+    // libraryContainer.appendChild(showRead);
 }
