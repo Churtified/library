@@ -44,9 +44,4 @@ function displayNewBook(latestBook) {
     bookContainer.appendChild(showAuthor);
     bookContainer.appendChild(showPages);
     bookContainer.appendChild(showRead);
-
-    // libraryContainer.appendChild(showTitle);
-    // libraryContainer.appendChild(showAuthor);
-    // libraryContainer.appendChild(showPages);
-    // libraryContainer.appendChild(showRead);
 }
