@@ -72,7 +72,7 @@ function displayNewBook(latestBook) {
         bookContainer.removeChild(showTitle);
         bookContainer.removeChild(showAuthor);
         bookContainer.removeChild(showPages);
-        bookContainer.removeChild(showRead);
+        bookContainer.removeChild(readButton);
         bookContainer.removeChild(removeButton);
         libraryContainer.removeChild(bookContainer);
     });
