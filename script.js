@@ -41,9 +41,27 @@ function displayNewBook(latestBook) {
     showPages.classList.add('showPages');
     showPages.textContent = `Pages: ${latestBook.pages}`;
     
-    let showRead = document.createElement('p');
-    showTitle.classList.add('showRead');
-    showRead.textContent = `Read Status: ${latestBook.read}`;
+    let readButton = document.createElement('button');
+    readButton.classList.add('readButton');
+    if(latestBook.read === false) {
+        readButton.textContent = 'Not Read';
+        readButton.style.backgroundColor = '#FF0000';
+    }
+    else {
+        readButton.textContent = 'Read';
+        readButton.style.backgroundColor = '#7CFC00';
+    }
+    readButton.addEventListener('click', (e) => {
+        latestBook.read = !latestBook.read;
+        if(latestBook.read === false) {
+            readButton.textContent = 'Not Read';
+            readButton.style.backgroundColor = '#FF0000';
+        }
+        else {
+            readButton.textContent = 'Read';
+            readButton.style.backgroundColor = '#7CFC00';
+        }
+    })
     
     let removeButton = document.createElement('button');
     removeButton.classList.add('removeButton');
@@ -62,6 +80,6 @@ function displayNewBook(latestBook) {
     bookContainer.appendChild(showTitle);
     bookContainer.appendChild(showAuthor);
     bookContainer.appendChild(showPages);
-    bookContainer.appendChild(showRead);
+    bookContainer.appendChild(readButton);
     bookContainer.appendChild(removeButton);
 }
