@@ -49,6 +49,16 @@ function displayNewBook(latestBook) {
     removeButton.classList.add('removeButton');
     removeButton.textContent = "Remove";
 
+    removeButton.addEventListener('click', (e) => {
+        myLibrary.splice(myLibrary.indexOf(latestBook), 1);
+        bookContainer.removeChild(showTitle);
+        bookContainer.removeChild(showAuthor);
+        bookContainer.removeChild(showPages);
+        bookContainer.removeChild(showRead);
+        bookContainer.removeChild(removeButton);
+        libraryContainer.removeChild(bookContainer);
+    });
+
     bookContainer.appendChild(showTitle);
     bookContainer.appendChild(showAuthor);
     bookContainer.appendChild(showPages);
