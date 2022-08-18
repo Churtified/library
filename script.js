@@ -15,10 +15,7 @@ function Book(title, author, pages, read) {
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.read = read,
-    this.info = function() {
-        return `"${title}` + ", " + `${author}` + ", " + `${pages}` + ", " + `${read}"`;
-    }
+    this.read = read
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -47,9 +44,14 @@ function displayNewBook(latestBook) {
     let showRead = document.createElement('p');
     showTitle.classList.add('showRead');
     showRead.textContent = `Read Status: ${latestBook.read}`;
+    
+    let removeButton = document.createElement('button');
+    removeButton.classList.add('removeButton');
+    removeButton.textContent = "Remove";
 
     bookContainer.appendChild(showTitle);
     bookContainer.appendChild(showAuthor);
     bookContainer.appendChild(showPages);
     bookContainer.appendChild(showRead);
+    bookContainer.appendChild(removeButton);
 }
