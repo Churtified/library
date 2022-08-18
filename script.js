@@ -1,8 +1,12 @@
 const libraryContainer = document.querySelector('.libraryContainer');
-const newBookButton = document.querySelector('.new-book-button');
 
 const addButton = document.querySelector('#add-button');
-addButton.addEventListener('click', addBookToLibrary);
+addButton.addEventListener('click', (e) => {
+    let newBook = new Book(title.value, author.value, pages.value, read.value);
+    e.preventDefault();
+    myLibrary.push(newBook);
+    displayNewBook(myLibrary[myLibrary.length - 1]);
+});
 
 let myLibrary = [];
 
