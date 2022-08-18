@@ -5,7 +5,14 @@
     font-family: 'Aboreto', cursive;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .library-title {
+    padding-top: 20px;
     text-align: center;
 }
 

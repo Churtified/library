@@ -1,7 +1,12 @@
 const libraryContainer = document.querySelector('.libraryContainer');
+const newBookButton = document.querySelector('.new-book-button');
+
+const addButton = document.querySelector('#add-button');
+addButton.addEventListener('click', addBookToLibrary);
 
 let myLibrary = [];
 
+//Constructor for Book
 function Book(title, author, pages, read) {
     this.title = title,
     this.author = author,
@@ -21,7 +26,6 @@ function addBookToLibrary(title, author, pages, read) {
 function displayNewBook(latestBook) {
     let bookContainer = document.createElement('div');
     bookContainer.classList.add('bookContainer');
-
     libraryContainer.appendChild(bookContainer);
 
     let showTitle = document.createElement('p');
