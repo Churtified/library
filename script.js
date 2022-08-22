@@ -43,7 +43,7 @@ function displayNewBook(latestBook) {
     
     let readButton = document.createElement('button');
     readButton.classList.add('readButton');
-    if(latestBook.read === false) {
+    if(latestBook.read === "no") {
         readButton.textContent = 'Not Read';
         readButton.style.backgroundColor = '#FF0000';
     }

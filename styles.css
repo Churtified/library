@@ -8,22 +8,55 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .library-title {
     padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
+}
+
+.form-container {
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    width: 30vw;
+    border: black 2px solid;
+}
+
+.form-container div {
+    margin: 10px;
+}
+
+.new-book-title {
+    margin-left: 70px;
+    padding-bottom: 10px;
+}
+
+#add-button {
+    margin-left: 115px;
+    width: 70px;
+    height: 30px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
 }
 
 .libraryContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     margin: 20px;
     gap: 20px;
+    width: 100vw;
 }
 
 .bookContainer {
+    display: grid;
+    gap: 10px;
     border: steelblue 2px solid;
-    padding: 10px;
+    margin: 10px;
+    padding: 20px;
 }
