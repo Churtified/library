@@ -11,11 +11,21 @@ addButton.addEventListener('click', (e) => {
 let myLibrary = [];
 
 //Constructor for Book
-function Book(title, author, pages, read) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
+// function Book(title, author, pages, read) {
+//     this.title = title,
+//     this.author = author,
+//     this.pages = pages,
+//     this.read = read
+// }
+
+//refactor to use ES6 class
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBookToLibrary(title, author, pages, read) {
